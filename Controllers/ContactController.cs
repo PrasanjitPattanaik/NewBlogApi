@@ -17,6 +17,7 @@ namespace NewBlog.API.Controllers
     public class ContactController : ControllerBase
     {
         SqlConnection con = new SqlConnection("Server=PRASANJIT;Database=TheDevBlogDb;Trusted_Connection=true");
+        //SqlConnection con = new SqlConnection("Server=database-1.chlvtiacmc2b.ap-south-1.rds.amazonaws.com;Database=blog; User=admin; Password=Prasanjit123Pattanaik; Trusted_Connection=true");
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
@@ -134,6 +135,38 @@ namespace NewBlog.API.Controllers
             con.Close();
             return Ok();
         }
+
+
+
+        // Get users details from table Users
+        //[HttpGet("users")]
+        //public IEnumerable<User> GetUsers()
+        //{
+        //    List<User> users = new List<User>();
+        //    con.Open();
+        //    cmd = new SqlCommand("SELECT * FROM Users", con);
+        //    da = new SqlDataAdapter(cmd);
+        //    dt = new DataTable();
+        //    da.Fill(dt);
+        //    con.Close();
+        //    foreach (DataRow row in dt.Rows)
+        //    {
+        //        users.Add(
+        //            new User
+        //            {
+        //                Id = row["Id"].ToString(),
+        //                Name = row["Name"].ToString(),
+        //                Email = row["Email"].ToString(),
+        //                Password = row["Password"].ToString(),
+        //                Role = row["Role"].ToString(),
+        //                CreatedDate = row["CreatedDate"].ToString(),
+        //                UpdatedDate = row["UpdatedDate"].ToString()
+        //            });
+        //    }
+        //    return users;
+        //}
+
+        
 
     }
 }
